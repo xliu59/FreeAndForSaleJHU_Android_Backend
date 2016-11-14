@@ -1,6 +1,7 @@
 package com.team16.project.MyAccount;
 
 import com.team16.project.core.JsonTransformer;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +50,7 @@ public class MyAccountController {
         post(API_CONTEXT + "/MyAccount/AccountModify/:sessionId", "application/json", (request, response) -> {
             try {
                 return myAccountService.updateAccountInfo(request.params(":sessionId"), request.body());
+
             } catch (MyAccountService.myAccountServiceException ex) {
                 logger.error(String.format("Failed to update accountInfo with sessionId: %s", request.params(":sessionId")));
                 response.status(405);

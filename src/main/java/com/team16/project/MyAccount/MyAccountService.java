@@ -3,6 +3,7 @@ package com.team16.project.MyAccount;
 import com.google.gson.Gson;
 import com.team16.project.User.User;
 import com.team16.project.sqlite.MyAccountDB;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +38,6 @@ public class MyAccountService {
      *
      */
     public HashMap<String, Object> updateAccountInfo(String sessionId, String body) throws myAccountServiceException {
-
         User user = new User();
         try {
             user = new Gson().fromJson(body, User.class);
@@ -45,6 +45,8 @@ public class MyAccountService {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+        System.out.println("create user success!");
 
     	/* email and phone must not missing! (check in the front end)
     	   if email or phone is updated, we need to send verification. (do here)
@@ -66,7 +68,3 @@ public class MyAccountService {
         }
     }
 }
-
-
-
-

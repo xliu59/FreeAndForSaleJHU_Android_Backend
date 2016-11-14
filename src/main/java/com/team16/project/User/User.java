@@ -5,7 +5,6 @@ package com.team16.project.User;
  * @author OOSE_Team16
  */
 public class User extends Guest {
-    private int userId;
     private String username;
     private String password;
     private String email;
@@ -14,6 +13,8 @@ public class User extends Guest {
     private String city;
     private String state;
     private String imgLink;
+    private String facebook;
+    private String zipCode;
 
     public String getImgLink() {
         return imgLink;
@@ -28,10 +29,6 @@ public class User extends Guest {
         this.facebook = facebook;
     }
 
-    private String facebook;
-
-    private String zipCode;
-
 //    private WishList wishlist;
 //    private SellList sellList;
 
@@ -45,9 +42,6 @@ public class User extends Guest {
         return password;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
     public String getCity() {
         return city;
     }
