@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
+import java.util.HashMap;
 
 import static spark.Spark.get;
 import static spark.Spark.post;
@@ -31,6 +32,8 @@ public class MyAccountController {
         get(API_CONTEXT + "/MyAccount/:sessionId", "application/json", (request, response) -> {
             try {
                 System.out.println("userId: " + request.params(":sessionId"));
+                HashMap<String, Object>  result = myAccountService.showUserDetailInfo(request.params(":sessionId"));
+                System.out.println("result: " + result);
 
                 return myAccountService.showUserDetailInfo(request.params(":sessionId"));
             } catch (MyAccountService.myAccountServiceException ex) {
