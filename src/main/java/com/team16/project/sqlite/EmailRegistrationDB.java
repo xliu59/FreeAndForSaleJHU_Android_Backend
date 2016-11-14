@@ -54,7 +54,8 @@ public class EmailRegistrationDB {
             RegistrationCodeGenerator registrationCodeGenerator = new RegistrationCodeGenerator();
             EmailRegistrationCode emailRegistrationCode = new EmailRegistrationCode(emailToBeVerified,
                     registrationCodeGenerator.getRegistrationCode());
-            return registrationCodeGenerator.getRegistrationCode();
+            //return registrationCodeGenerator.getRegistrationCode();
+            return 1;
         }
     }
 }
