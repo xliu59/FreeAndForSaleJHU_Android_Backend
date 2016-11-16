@@ -1,6 +1,7 @@
 package com.team16.project.core;
 
 
+import com.team16.project.Login.LoginController;
 import com.team16.project.MyAccount.MyAccountController;
 import com.team16.project.MyAccount.MyAccountService;
 import com.team16.project.registration.email.EmailRegistrationController;
@@ -18,6 +19,7 @@ public class Bootstrap {
         new EmailRegistrationController();
         new PhoneRegistrationController();
         new PasswordController();
+        new LoginController();
 
         MyAccountDB projectDB = new MyAccountDB();
 
